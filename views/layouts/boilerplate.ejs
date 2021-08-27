@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/menu.min.css" integrity="sha256-cRSLOaiPiyfTQ4B4HT1OCF/2CWNzGcPO9Nns6Jrf4hg=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body>
+      <ul id="slide-out" class="sidenav">
+          <div class="ui inverted large fixed vertical menu" style="height: 100%">
+             <div id="topSection"> 
+               <a class="item" id="header-item">
+                <span id="header-text">Todo List's App</span>
+              </a>
+              <a class="item" href="/">
+                Home Page
+               </a>
+              <a class="item" href="/lists">
+               Lists
+              </a>
+              <a class='dropdown-trigger item' href='#' data-target='dropdown1'>FAQ</a>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                  <li><a href="">how to use?</a></li>
+                  <li><a href="">about me</a></li>
+                </ul>
+              </div>
+      
+             <div id="bottomSection">
+                <% if(user){ %>
+                  <a class="item" href="/logout">
+                      logout
+                    </a>
+                <% }else{ %>
+                <a class="item" href="/register">
+                  Register
+                </a>
+                <a class="item" href="login">
+                  Login
+                </a>
+                <% } %>
+             </div>
+            </div>  
+        </ul>  
+    <div class="row">
+        <a href="#" style="position: fixed" data-target="slide-out" class="sidenav-trigger"><i class="medium material-icons">menu</i></a>  
+      <div><%- body -%></div>
+    </div>
+  </body>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/javascripts/style.js"></script>
+  <script src="/javascripts/index.js"></script>
+  </html>

@@ -1,0 +1,93 @@
+html{
+  height: 100%;
+}
+h1, h2, h3, h4{
+  text-align: center;
+}
+.ui.inverted.menu a.item{
+  color: #9d9d9e;
+}
+.ui.inverted.menu{
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+ justify-content: space-between ;
+}
+#bottomSection{
+ position: relative;
+ top: 20%;
+}
+.upper{
+  background-color: #EBDEF0;
+  width: 100%;
+  margin-top: 0;
+  height: 200px;
+}
+.upper h1{
+  text-align: center;
+  font-size: 90px;
+  margin-top: 0;
+  padding-top: 35px;
+}
+.btn-form{
+  display: inline;
+}
+.collapsible-item{
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 17px;
+}
+.collapsible{
+  margin-top: 0% !important;
+  margin-bottom: 0% !important;
+}
+.collapsible-header{
+  font-size: 20px;
+  display: block !important;
+  padding-bottom: 50px !important;
+}
+.compact{
+  float: right !important;
+}
+.material-icons{
+  margin-right: 0% !important;
+}
+
+#header-text{
+padding-bottom: 3px;
+border-bottom: 2px solid #9d9d9e;
+
+}
+#header-item{
+  color: #9d9d9e !important;
+  font-size: 25px;
+}
+#dropdown1{
+  background-color: #1b1c1d;
+  width: 150px !important;
+  border: 0.2px solid white;
+  border-radius: 5px;
+}
+#right_menu{
+  margin-top: 10px;
+  float: right;
+}
+#disabled{
+  display: none;
+}
+#title{
+  font-size: 20px;
+}
+.edit-icon{
+  float: right;
+}
+.btn-checkbox{
+  display: contents;
+}
+.modal-mini .modal-content{
+  padding: 10px !important;
+}
+.done{
+  text-decoration: line-through;
+  color: gray !important;
+}

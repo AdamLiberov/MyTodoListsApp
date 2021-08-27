@@ -1,0 +1,56 @@
+<% layout('layouts/boilerplate') -%>
+       <div class="upper">
+            <h1 id="header">Todo lists</h1>
+       </div> 
+       <div class="container">
+                <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
+
+            <div width="200px" id="modal1" class="modal">
+                    <form  action="/lists" method="POST">
+                        <div class="modal-content">
+                        <div class="input-field">
+                                <input id="title" name="list[title]" type="text" class="validate">
+                                <label for="title">Title</label>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                                    <button class="waves-effect waves-teal btn-flat"><a class="modal-close waves-effect waves-green btn-flat">Create</a></button>
+                            </div>  
+                            </form>
+            </div>
+                  
+        <div class="row">  
+            
+                <div class="carousel">
+                                <% lists.forEach((list, index) => { %>         
+                                        
+                                        <div style="width: 300px; height: 250px;" class="card pink lighten-5 carousel-item">
+                                                        <div class="card-content">
+                                                          <h2><%= list.title %></h2>
+                                                          <a class="btn-floating waves-effect waves-light blue modal-trigger" href="#modal2<%= index %>"><i class="large material-icons">edit</i></a>
+                                                          <div width="200px" id="modal2<%= index %>" class="modal modal-mini">
+                                                                        <form  action="/lists/<%= list._id %>?_method=PUT" method="POST">
+                                                                            <div class="modal-content">
+                                                                            <div class="input-field">
+                                                                                    <input id="title" name="list[title]" value="<%= list.title %>" type="text" class="validate">
+                                                                                    <label for="title">Title</label>
+                                                                                  </div>
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                        <button class="waves-effect waves-teal btn-flat"><a class="modal-close waves-effect waves-green btn-flat">Update</a></button>
+                                                                                </div>  
+                                                                                </form>
+                                                                </div>
+                                                          <a class="btn-floating waves-effect waves-light red" href="/lists/<%= list._id %>"><i class="large material-icons ">expand_more</i></a>
+                                                          <form class="btn-form" method="POST" action="/lists/<%= list._id %>?_method=DELETE">
+                                                          <button class="btn-floating waves-effect waves-light black"><i class="large material-icons">delete</i></button>
+                                                          </form>
+                                                        </div>
+                                                      </div>
+                                        
+                                <% }) %>
+                </div>        
+                            
+                    
+        </div>
+       </div>
